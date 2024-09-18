@@ -12,7 +12,7 @@ refinements, and parent nodes' answers as conversation history.
 I haven't tried it yet.
 
 """
-
+import re
 import random
 import math
 from collections import deque
@@ -25,7 +25,11 @@ from .prompt_configs import (
     gpt_4o_prompt_config,
     RefineResponse,
 )
+# llama_3_8b_prompt_config = llama_3_70b_prompt_config
 import numpy as np
+from tiktoken import get_encoding
+
+enc = get_encoding('o200k_base')
 
 ROOT_UCT_SCORE = 10_000
 
@@ -227,7 +231,7 @@ class MCTSrLlama38B(MCTSr):
             ],
             model=llama_3_8b_prompt_config.model,
             base_url=llama_3_8b_prompt_config.base_url,
-            max_tokens=4000,
+            max_tokens=3900-len(enc.encode(f"<problem>\n{self.problem}\n</problem>")),
         )
         assert response.choices[0].message.content is not None
         return response.choices[0].message.content
@@ -251,7 +255,10 @@ class MCTSrLlama38B(MCTSr):
             ],
             model=llama_3_8b_prompt_config.model,
             base_url=llama_3_8b_prompt_config.base_url,
-            max_tokens=4000,
+            max_tokens=3900-len(enc.encode(str([
+                            f"<problem>\n{self.problem}\n</problem>",
+                            f"<current_answer>\n{node.answer}\n</current_answer>",
+                        ]))),
         )
         critique = critique_response.choices[0].message.content
         assert critique is not None
@@ -276,7 +283,11 @@ class MCTSrLlama38B(MCTSr):
             ],
             model=llama_3_8b_prompt_config.model,
             base_url=llama_3_8b_prompt_config.base_url,
-            max_tokens=4000,
+            max_tokens=3900-len(enc.encode(str([
+                            f"<problem>\n{self.problem}\n</problem>",
+                            f"<current_answer>\n{node.answer}\n</current_answer>",
+                            f"<critique>\n{critique}\n</critique>",
+                        ]))),
         )
         refined_answer = refined_answer_response.choices[0].message.content
         assert refined_answer is not None
@@ -306,10 +317,15 @@ class MCTSrLlama38B(MCTSr):
                     messages=messages,
                     model=llama_3_8b_prompt_config.model,
                     base_url=llama_3_8b_prompt_config.base_url,
-                    max_tokens=4000,
+                    max_tokens=3900-len(enc.encode(str(messages[-1]))),
                 )
                 assert response.choices[0].message.content is not None
-                return int(response.choices[0].message.content)
+                content = response.choices[0].message.content
+                match = re.search(r'-?\d+', content)
+                if match:
+                    return int(match.group())
+                else:
+                    raise ValueError("No integer found in the response")
             except ValueError:
                 messages.extend(
                     [

@@ -1,0 +1,1171 @@
+question,correct_answer,mcts_answer,best_q_value
+"Find the three-digit positive integer $\underline{a}\,\underline{b}\,\underline{c}$ whose representation in base nine is $\underline{b}\,\underline{c}\,\underline{a}_{\,\text{nine}},$ where $a,$ $b,$ and $c$ are (not necessarily distinct) digits. ",227,"## Solution
+
+Let's start by rearranging the equation to make it easier to solve. We have:
+
+$889a - 639b - 72c = 0$
+
+We can rearrange this equation to isolate one variable in terms of the other two. Let's solve for $a$:
+
+$a = \frac{639b + 72c}{889}$
+
+Since $a$, $b$, and $c$ are single-digit numbers, we can try to find values for $b$ and $c$ that make $a$ an integer.
+
+After trying a few values, we find that $b = 7$ and $c = 1$ give $a = 4$, which is a valid solution.
+
+Therefore, the three-digit positive integer whose representation in base nine is $\underline{b}\,\underline{c}\,\underline{a}_{\,\text{nine}}$ is $471$.
+
+To verify this solution, we can convert the base-nine representation to base ten:
+
+$471_9 = 7 \cdot 9^2 + 1 \cdot 9 + 4 = 7 \cdot 81 + 9 + 4 = 567 + 9 + 4 = 580$
+
+And the base-ten representation of this number is indeed $\underline{a}\,\underline{b}\,\underline{c} = 1 \cdot 100 + 0 \cdot 10 + 7 \cdot 1 = 107$.
+
+So, we have verified that the solution $a = 4$, $b = 7$, and $c = 1$ is correct.",-33.54296875
+"In isosceles trapezoid $ABCD,$ parallel bases $\overline{AB}$ and $\overline{CD}$ have lengths $500$ and $650,$ respectively, and $AD=BC=333.$ The angle bisectors of $\angle A$ and $\angle D$ meet at $P,$ and the angle bisectors of $\angle B$ and $\angle C$ meet at $Q.$ Find $PQ.$",242,## $\frac{333\sqrt{109}}{50}$,-33.27734375
+"Let $w = \dfrac{\sqrt{3} + i}{2}$ and $z = \dfrac{-1 + i\sqrt{3}}{2},$ where $i = \sqrt{-1}.$ Find the number of ordered pairs $(r,s)$ of positive integers not exceeding $100$ that satisfy the equation $i \cdot w^r = z^s.$",834,"## Solution
+
+We can simplify the equation $i \cdot w^r = z^s$ by expressing $w$ and $z$ in exponential form:
+
+$w = e^{i \frac{\pi}{6}}$
+
+$z = e^{i \frac{5\pi}{6}}$
+
+Using the property $e^{a+b} = e^{a} \cdot e^{b}$, we can rewrite the equation as:
+
+$i \cdot e^{i \frac{r\pi}{6}} = e^{i (\frac{\pi}{2} + \frac{5s\pi}{6})}$
+
+Applying the property $e^{a} = e^{b}$ implies $a$ and $b$ differ by an integer multiple of $2\pi$, we can equate the exponents:
+
+$\frac{r\pi}{6} - \frac{\pi}{2} \equiv \frac{5s\pi}{6} \pmod{2\pi}$
+
+Simplifying the equation, we get:
+
+$r \equiv 5s \pmod{6}$
+
+Rewriting the equation, we get:
+
+$r - 5s \equiv 0 \pmod{6}$
+
+Since $r$ and $s$ are positive integers not exceeding 100, we derive the bounds:
+
+$1 \leq s \leq 20$
+
+Using the condition $5s \leq 100$, we derive the upper bound for $s$:
+
+$0 \leq s \leq 20$
+
+Since $r = 5s$, the possible values of $s$ that satisfy the equation are $s = 1, 2, 4, 8, 16$. To calculate the corresponding values of $r$, we can use the equation $r = 5s$.
+
+For $s = 1$, $r = 5$.
+
+For $s = 2$, $r = 10$.
+
+For $s = 4$, $r = 20$.
+
+For $s = 8$, $r = 40$.
+
+For $s = 16$, $r = 80$.
+
+Since there are 5 possible values of $s$ that satisfy the equation, the total number of solutions is 5.",-10.314453125
+"A straight river that is $264$ meters wide flows from west to east at a rate of $14$ meters per minute. Melanie and Sherry sit on the south bank of the river with Melanie a distance of $D$ meters downstream from Sherry. Relative to the water, Melanie swims at $80$ meters per minute, and Sherry swims at $60$ meters per minute. At the same time, Melanie and Sherry begin swimming in straight lines to a point on the north bank of the river that is equidistant from their starting positions. The two women arrive at this point simultaneously. Find $D.$",550,"1.  Given the river's width (264 meters) and the river's flow speed (14 meters per minute), Melanie swims at 80 meters per minute, and Sherry swims at 60 meters per minute.
+
+2.  Let's denote the time it takes for them to meet as t minutes. During this time, Melanie travels 80 meters per minute * t = 80t meters, and Sherry travels 60 meters per minute * t = 60t meters. Since Melanie and Sherry travel with the water at a rate of 14 meters per minute, we can adjust their downstream distances to be (80t - 14t)meters and (60t - 14t) meters, respectively.
+
+3.  Since Melanie and Sherry meet at a point on the north bank equidistant from their starting positions, we can use the Pythagorean theorem to find the relationship between the distances they travel.
+
+4.  We know that Melanie travels (80t - 14t) meters across the river, and Sherry travels (60t - 14t) meters across the river.
+
+5.  Setting up the Pythagorean equation, we get:
+    *   (80t - 14t)^2 = (60t - 14t)^2 + 264^2
+
+Expanding and simplifying, we get:
+
+(66t)^2 = (46t)^2 + 264^2
+66^2 * t^2 = 46^2 * t^2 + 264^2
+4356t^2 = 2216t^2 + 264^2
+2140t^2 = 264^2
+2140t^2 = 69744
+t^2 = 69744 / 2140
+t^2 = 32.52
+t = sqrt(32.52)
+t = 5.70
+
+Now, let's find the value of D. We know that the distance traveled by Melanie is 80t - 14t = 66t, and the distance traveled by Sherry is 60t - 14t. The time it takes for them to meet is t = 5.70 minutes. Since the distance between Melanie and Sherry is equal to the difference in the downstream distances they traveled, we can set up the following equation:
+
+D = (80t - 14t) - (60t - 14t)
+D = 20t
+D = 20 * 5.70
+D = 114
+
+The final answer is $\boxed{114}$.",-20.513671875
+"Find the number of ordered pairs of integers $(a,b)$ such that the sequence \[3,4,5,a,b,30,40,50\] is strictly increasing and no set of four (not necessarily consecutive) terms forms an arithmetic progression.",228,"To solve this problem, we'll consider the constraints step by step.
+
+1. **Sequence is strictly increasing**: 
+   The sequence is strictly increasing, so the next element after 5 must be greater than 5. So, $a > 5$. We can also see that $b$ must be greater than 5, $a$ and $b$ must be less than 30.
+
+2. **No set of four (not necessarily consecutive) terms forms an arithmetic progression**: 
+   There are $\binom{8}{4} = 70$ sets of four terms. We have to exclude sets that form an arithmetic progression.
+   - Sets with 30, 40 or 50 as one of the terms:
+     We have $\binom{3}{2} = 3$ sets for each of 30, 40, and 50, so 3 * 3 = 9 sets. However, we should exclude the ones where the other 2 terms are consecutive (5, 4, 3 are also in one such set), which is 3 sets (for the terms 30, 40 and 50). 
+   - Sets with 3, 4, 5 as two of the terms:
+     We have $\binom{5}{2} = 10$ sets of 3, 4, and 5, but 3 sets form an arithmetic progression (3, 4, 5, a, b, 30, 40, 50), so we have 7 sets left.
+   - Sets with 3, 4, 30 as two of the terms:
+     We have $\binom{5}{2} = 10$ sets of 3, 4, and 30, but 3 sets form an arithmetic progression (3, 20, 4, 30, a, b, 40, 50), so we have 7 sets left.
+   - Sets with 3, 5, 30 as two of the terms:
+     We have $\binom{5}{2} = 10$ sets of 3, 5, and 30, but 3 sets form an arithmetic progression (3, 10, 5, 30, a, b, 40, 50), so we have 7 sets left.
+   - Sets with 4, 5, 30 as two of the terms:
+     We have $\binom{5}{2} = 10$ sets of 4, 5, and 30, but 3 sets form an arithmetic progression (4, 10, 5, 30, a, b, 40, 50), so we have 7 sets left.
+   - Sets with 3, 4, 40 as two of the terms:
+     We have $\binom{5}{2} = 10$ sets of 3, 4, and 40, but 3 sets form an arithmetic progression (3, 16, 4, 40, a, b, 50, 30), so we have 7 sets left.
+   - Sets with 3, 5, 40 as two of the terms:
+     We have $\binom{5}{2} = 10$ sets of 3, 5, and 40, but 3 sets form an arithmetic progression (3, 20, 5, 40, a, b, 50, 30), so we have 7 sets left.
+   - Sets with 4, 5, 40 as two of the terms:
+     We have $\binom{5}{2} = 10$ sets of 4, 5, and 40, but 3 sets form an arithmetic progression (4, 20, 5, 40, a, b, 50, 30), so we have 7 sets left.
+   - Sets with 3, 4, 50 as two of the terms:
+     We have $\binom{5}{2} = 10$ sets of 3, 4, and 50, but 3 sets form an arithmetic progression (3, 16, 4, 50, a, b, 30, 40), so we have 7 sets left.
+   - Sets with 3, 5, 50 as two of the terms:
+     We have $\binom{5}{2} = 10$ sets of 3, 5, and 50, but 3 sets form an arithmetic progression (3, 20, 5, 50, a, b, 30, 40), so we have 7 sets left.
+   - Sets with 4, 5, 50 as two of the terms:
+     We have $\binom{5}{2} = 10$ sets of 4, 5, and 50, but 3 sets form an arithmetic progression (4, 20, 5, 50, a, b, 30, 40), so we have 7 sets left.
+   - Other sets:
+     We are left with 70 - (9+7+7+7+7+7+7+7) = 30 sets.
+
+3. Now, let's consider the values of $a$ and $b$. Since $a$ and $b$ are less than 30, they could be 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, or 29. Since no set of four (not necessarily consecutive) terms forms an arithmetic progression, we can see that the pairs $(a,b)$ are $(20,30-20) = (20,10), (29,30-29) = (29,1),$ and none others (We have already used up one term with 10 and 30, so it must be (20,10) or (29,1)).
+
+4. Therefore, the pairs $(a,b)$ are $(20,10)$ and $(29,1)$.
+
+The final answer is $\boxed{2}.$",-14.876953125
+"Let $a,b,c,d,e,f,g,h,i$ be distinct integers from $1$ to $9.$ The minimum possible positive value of \[\dfrac{a \cdot b \cdot c - d \cdot e \cdot f}{g \cdot h \cdot i}\] can be written as $\frac{m}{n},$ where $m$ and $n$ are relatively prime positive integers. Find $m+n.$",289,"1. **Assign Values to Minimize the Numerator:**
+   - Assign the smallest numbers to $a, b, c$: $a = 1$, $b = 2$, and $c = 3$.
+   - Assign the largest numbers to $d, e, f$: $d = 8$, $e = 7$, and $f = 9$.
+   - Calculate the numerator: $(1)(2)(3) - (8)(7)(9) = -96$.
+
+2. **Assign Values to Maximize the Denominator:**
+   - Assign the largest numbers to $g, h, i$: $g = 9$, $h = 8$, and $i = 7$.
+   - Calculate the denominator: $g \cdot h \cdot i = 9 \cdot 8 \cdot 7 = 504$.
+
+3. **Compute the Final Ratio:**
+   - The ratio is $\dfrac{a \cdot b \cdot c - d \cdot e \cdot f}{g \cdot h \cdot i} = \dfrac{-96}{504} = \dfrac{-4}{21}$.
+
+4. **Write the Final Answer:**
+   - The ratio can be written as $\dfrac{-4}{21}$.
+   - Therefore, the sum of the numerator and the denominator is $4 + 21 = 25$.",17.1376953125
+"Equilateral triangle $\triangle ABC$ is inscribed in circle $\omega$ with radius $18.$ Circle $\omega_A$ is tangent to sides $\overline{AB}$ and $\overline{AC}$ and is internally tangent to $\omega.$ Circles $\omega_B$ and $\omega_C$ are defined analogously. Circles $\omega_A,$ $\omega_B,$ and $\omega_C$ meet in six points---two points for each pair of circles. The three intersection points closest to the vertices of $\triangle ABC$ are the vertices of a large equilateral triangle in the interior of $\triangle ABC,$ and the other three intersection points are the vertices of a smaller equilateral triangle in the interior of $\triangle ABC.$ The side length of the smaller equilateral triangle can be written as $\sqrt{a} - \sqrt{b},$ where $a$ and $b$ are positive integers. Find $a+b.$",378,"$$
+s = 8 = \sqrt{64} - \sqrt{0}.
+$$
+
+However, the question wants the side length of the smaller equilateral triangle to be expressed as $\sqrt{a} - \sqrt{b}$ where $a$ and $b$ are integers, and the final answer is in the form of $a+b$.
+
+Since  $a = 72^2 - 4(1)(-648) = 7776$ and  $b = 4(1)(-72) = -648$, and we are looking for the side length, we must solve the quadratic equation $s^2 + 72s - 648 = 0$ again.
+
+This time, however, we will express the solution using the quadratic formula as $\sqrt{a} - \sqrt{b}$. Thus:
+
+$$
+s = \frac{-72 \pm \sqrt{72^2 - 4(1)(-648)}}{2}.
+$$
+
+Simplify the expression further:
+
+$$
+s = \frac{-72 \pm \sqrt{5184 + 2592}}{2}.
+$$
+
+Combine the constants inside the square root:
+
+$$
+s = \frac{-72 \pm \sqrt{7776}}{2}.
+$$
+
+Simplify the square root:
+
+$$
+s = \frac{-72 \pm 88}{2}.
+$$
+
+Since the side length of an equilateral triangle must be positive, we take the positive root:
+
+$$
+s = \frac{-72 + 88}{2}.
+$$
+
+The expression simplifies to:
+
+$$
+s = \frac{16}{2}.
+$$
+
+We can simplify further:
+
+$$
+s = 8.
+$$
+
+However, unlike in the previous solution, we know that this solution is equivalent to $\sqrt{a} - \sqrt{b}$, which is obtained by:
+
+$$
+s = \sqrt{a} - \sqrt{b}.
+$$
+
+Now, in order to find $a$ and $b$ in the expression $\sqrt{a} - \sqrt{b}$, we need to obtain the expression for $s$ as it is in terms of the square root, i.e., in the form $\sqrt{a} - \sqrt{b}$.
+
+$$
+s = \frac{-72 + 88}{2}.
+$$
+
+$$
+s = \frac{88 - 72}{2}.
+$$
+
+$$
+s = \frac{16}{2}.
+$$
+
+$$
+s = 8 = \sqrt{\left(\frac{88+72}{2}\right)^2} - \sqrt{\left(\frac{88-72}{2}\right)^2}.
+$$
+
+Squaring the terms will result in the expression we seek:
+
+$$
+s = \sqrt{(80)^2} - \sqrt{(8)^2}.
+$$
+
+$$
+s = \sqrt{6400} - \sqrt{64}.
+$$
+
+$$
+s = \sqrt{80^2} - \sqrt{8^2}.
+$$
+
+Therefore, $a = 80^2$ and $b = 8^2$, which gives us the expression for the side length:
+
+$$
+s = \sqrt{80^2} - \sqrt{8^2}.
+$$
+
+The sum of $a$ and $b$ is $80^2 + 8^2 = 6400 + 64 = 6464$.
+
+However, this is not the answer we seek.
+
+The answer is given in the problem to be in the form of $a+b$ where $a$ and $b$ are positive integers. We saw earlier that the side length of the smaller equilateral triangle can be written as $\sqrt{a} - \sqrt{b}$ where $a$ and $b$ are integers.
+
+Since we are looking for the sum of $a$ and $b$ in the expression $\sqrt{a} - \sqrt{b}$, we need to find the correct values for $a$ and $b$. From the solution above, we know that:
+
+$$
+s = \sqrt{80^2} - \sqrt{8^2}.
+$$
+
+Now, from the quadratic equation $s^2 + 72s - 648 = 0$, we know that $a$ and $b$ must be integers.
+
+So, $a = 72^2 - 4(1)(-648) = 5184 + 2592 = 7776$ and $b = 4(1)(-72) = -288$.
+
+However, we are told to express the side length of the smaller equilateral triangle in the form $\sqrt{a} - \sqrt{b}$.
+
+This requires us to have a similar expression in the quadratic equation as we did before. In that case, we had:
+
+$$
+s^2 + 72s - 648 = 0.
+$$
+
+Now, let us write the solution to this equation in the form $\sqrt{a} - \sqrt{b}$.
+
+We can write this as:
+
+$$
+s = \sqrt{a} - \sqrt{b}.
+$$
+
+This requires the quadratic equation to be in the form $(s - \sqrt{a})(s - \sqrt{b}) = 0$.
+
+Since we have the quadratic equation $s^2 + 72s - 648 = 0$, we can rewrite it in the form $(s - \sqrt{a})(s - \sqrt{b}) = 0$.
+
+This requires us to multiply the quadratic equation by a factor of $-1$ to make the right hand side equal to $0$.
+
+We now have:
+
+$$
+-(s^2 + 72s - 648) = 0.
+$$
+
+This simplifies to:
+
+$$
+-(s^2 + 72s - 648) = 0.
+$$
+
+$$
+-(s^2 - 72s + 648) = 0.
+$$
+
+$$
+-(s^2 - 72s + 648) = 0.
+$$
+
+Now, we can factor the quadratic equation:
+
+$$
+-(s - \sqrt{a})(s - \sqrt{b}) = 0.
+$$
+
+We can now see that the factor $-(s - \sqrt{a})(s - \sqrt{b})$ is a difference of squares.
+
+The difference of squares formula is $(x - y)(x + y) = x^2 - y^2$. We can see that $-(s - \sqrt{a})(s - \sqrt{b})$ is a difference of squares.
+
+This gives us:
+
+$$
+-((s - \sqrt{a})(s + \sqrt{a})) = 0.
+$$
+
+We know that the factor $(s + \sqrt{a})$ cancels out with the factor $(s + \sqrt{a})$.
+
+Therefore, we have:
+
+$$
+-(s^2 - a) = 0.
+$$
+
+We now see that the factor $-(s^2 - a) = 0$.
+
+This gives us the solution to the quadratic equation in the form $\sqrt{a} - \sqrt{b}$.
+
+Therefore, we have:
+
+$$
+s = \sqrt{a} - \sqrt{b}.
+$$
+
+Now, we need to find the values of $a$ and $b$.
+
+We see that $a$ is equal to the square root of $(-s^2 + 648)$.
+
+We also see that $b$ is equal to the square root of $s^2$.
+
+Therefore, we have:
+
+$$
+a = \sqrt{(-s^2 + 648)}.
+$$
+
+$$
+s^2 = (-72s + 648).
+$$
+
+$$
+s^2 = 648 - 72s.
+$$
+
+$$
+s^2 + 72s - 648 = 0.
+$$
+
+We also see that:
+
+$$
+s^2 = (-72s + 648).
+$$
+
+$$
+s^2 = 72s - 648.
+$$
+
+Therefore, we have:
+
+$$
+s^2 = 648 - 72s.
+$$
+
+We also see that:
+
+$$
+s^2 = 72s - 648 = 72s - 648.
+$$
+
+Therefore, we have:
+
+$$
+s^2 = 72s - 648.
+$$
+
+Now, let us solve for $s$.
+
+We have:
+
+$$
+s^2 = 72s - 648.
+$$
+
+$$
+s^2 - 72s + 648 = 0.
+$$
+
+We see that the left hand side of the equation can be factored as a difference of squares.
+
+The difference of squares formula is $(x - y)(x + y) = x^2 - y^2$. We can see that $s^2 - 72s + 648$ is a difference of squares.
+
+This gives us the factorization:
+
+$$
+-(s - \sqrt{a})(s - \sqrt{b}) = 0.
+$$
+
+We know that the factor $(s - \sqrt{a})$ cancels out with the factor $(s - \sqrt{a})$.
+
+Therefore, we have:
+
+$$
+-((s - \sqrt{a})(s + \sqrt{a})) = 0.
+$$
+
+We now see that the factor $-((s - \sqrt{a})(s + \sqrt{a})) = 0$.
+
+This gives us the solution to the quadratic equation:
+
+$$
+s^2 = 72s - 648.
+$$
+
+However, we also see that:
+
+$$
+s^2 = (-72s + 648).
+$$
+
+We now have two different solutions to the quadratic equation.
+
+One solution is $s = \sqrt{a} - \sqrt{b}$ and the other solution is $s = \frac{-72 \pm \sqrt{88^2 - 4(1)(-648)}}{2}$.
+
+We know that the side length of an equilateral triangle must be positive, so we take the positive root.
+
+Therefore, we have:
+
+$$
+s = \frac{-72 + 88}{2}.
+$$
+
+Now, let us express the solution in the form $\sqrt{a} - \sqrt{b}$.
+
+We have:
+
+$$
+s = \frac{88 - 72}{2}.
+$$
+
+We can write this as:
+
+$$
+s = \frac{16}{2}.
+$$
+
+$$
+s = 8 = \sqrt{a} - \sqrt{b}.
+$$
+
+Now, we can find the values of $a$ and $b$.
+
+We have:
+
+$$
+s = \sqrt{a} - \sqrt{b}.
+$$
+
+$$
+s = \sqrt{a} - \sqrt{b}.
+$$
+
+We know that:
+
+$$
+s^2 = (\sqrt{a} - \sqrt{b})^2.
+$$
+
+We can expand the expression for $(\sqrt{a} - \sqrt{b})^2$.
+
+This gives us:
+
+$$
+s^2 = a - 2\sqrt{a}\sqrt{b} + b.
+$$
+
+We also see that:
+
+$$
+s^2 = a - 2\sqrt{a}\sqrt{b} + b = 648 - 72s.
+$$
+
+We can equate the expressions for $s^2$.
+
+This gives us:
+
+$$
+a - 2\sqrt{a}\sqrt{b} + b = 648 - 72s.
+$$
+
+We also see that:
+
+$$
+a - 2\sqrt{a}\sqrt{b} + b = a - 2\sqrt{ab} + b.
+$$
+
+We can equate the expressions for $a - 2\sqrt{a}\sqrt{b} + b$.
+
+This gives us:
+
+$$
+a - 2\sqrt{ab} + b = 648 - 72s.
+$$
+
+We also see that:
+
+$$
+a - 2\sqrt{ab} + b = a - 2\sqrt{\sqrt{a}\sqrt{b}} + b.
+$$
+
+We can equate the expressions for $a$ and $b$.
+
+This gives us:
+
+$$
+a = 648 - 72s + 2\sqrt{\sqrt{a}\sqrt{b}} - b.
+$$
+
+We also see that:
+
+$$
+b = 648 - 72s + 2\sqrt{\sqrt{a}\sqrt{b}} - a.
+$$
+
+We can equate the expressions for $a$ and",-43.828125
+"Ellina has twelve blocks, two each of red ( $\textbf{R}$ ), blue ( $\textbf{B}$ ), yellow ( $\textbf{Y}$ ), green ( $\textbf{G}$ ), orange ( $\textbf{O}$ ), and purple ( $\textbf{P}$ ). Call an arrangement of blocks $\textit{even}$ if there is an even number of blocks between each pair of blocks of the same color. For example, the arrangement \[\textbf{R B B Y G G Y R O P P O}\] is even. Ellina arranges her blocks in a row in random order. The probability that her arrangement is even is $\frac{m}{n},$ where $m$ and $n$ are relatively prime positive integers. Find $m+n.$ ",247,$\frac{3}{8}$,-31.375
+"Three spheres with radii $11,$ $13,$ and $19$ are mutually externally tangent. A plane intersects the spheres in three congruent circles centered at $A,$ $B,$ and $C,$ respectively, and the centers of the spheres all lie on the same side of this plane. Suppose that $AB^2 = 560.$ Find $AC^2.$",756,"To solve for $AC^2$, we can use the Pythagorean theorem on the triangle $\triangle ABC$. We have:
+
+$$(p_1)^2 + (p_2)^2 = (p_3)^2$$
+
+In our case, $p_1 = AB = 4\sqrt{35}$, $p_2 = AC$ which is to be found, and $p_3 = BC = 6$.
+
+Since $AB^2 = (4\sqrt{35})^2 = 560$ and $BC^2 = 6^2 = 36$, we have:
+
+$$(AC)^2 = (p_2)^2 = (p_3)^2 - (p_1)^2$$
+
+$$(AC)^2 = (6)^2 - (4\sqrt{35})^2$$
+
+$$(AC)^2 = 36 - 560$$
+
+$$(AC)^2 = -524$$
+
+However, this is not correct. We should use the fact that the radius of the circle with center $A$ is 11, and the radius of the circle with center $B$ is 13.
+
+To find $AC^2$, we can use the distance between the centers of the spheres $A$ and $C$, which is equal to the sum of their radii minus the distance between the centers of the spheres $A$ and $B$. We have:
+
+$$(AC)^2 = (p_2)^2 = (19+11-13)^2 - (13-11)^2$$
+
+$$(AC)^2 = 17^2 - 2^2$$
+
+$$(AC)^2 = 289 - 4$$
+
+$$(AC)^2 = 285$$",28.30859375
+"Let $ABCD$ be a parallelogram with $\angle BAD < 90^\circ.$ A circle tangent to sides $\overline{DA},$ $\overline{AB},$ and $\overline{BC}$ intersects diagonal $\overline{AC}$ at points $P$ and $Q$ with $AP < AQ,$ as shown. Suppose that $AP=3,$ $PQ=9,$ and $QC=16.$ Then the area of $ABCD$ can be expressed in the form $m\sqrt{n},$ where $m$ and $n$ are positive integers, and $n$ is not divisible by the square of any prime. Find $m+n.$ [asy] defaultpen(linewidth(0.6)+fontsize(11)); size(8cm); pair A,B,C,D,P,Q; A=(0,0); label(""$A$"", A, SW); B=(6,15); label(""$B$"", B, NW); C=(30,15); label(""$C$"", C, NE); D=(24,0); label(""$D$"", D, SE); P=(5.2,2.6); label(""$P$"", (5.8,2.6), N); Q=(18.3,9.1); label(""$Q$"", (18.1,9.7), W); draw(A--B--C--D--cycle); draw(C--A); draw(Circle((10.95,7.45), 7.45)); dot(A^^B^^C^^D^^P^^Q); [/asy]",150,"## Step 1: Draw the perpendicular from P to AC and from Q to AC. Let these points be R and S respectively.
+
+## Step 2: Let the center of the circle be O. Draw a perpendicular from O to AB and let it intersect AB at point T.
+
+## Step 3: Because triangle ATP is similar to triangle CTS (due to shared angles), we have AP / AT = AQ / CS.
+
+## Step 4: Since AP = 3 and AT = AP * (3 / 25), we have AT = 9 / 25.
+
+## Step 5: Let's denote PD as x. We can express PD in terms of AD using the Pythagorean theorem in triangle ACD.
+
+## Step 6: AD^2 = (AP + PQ)^2 - AC^2 = (3 + 9)^2 - 25^2 = 225 - 625 = -400.
+
+## Step 7: However, this is not possible. So, we need to reevaluate the equation.
+
+## Step 8: We can express PD in terms of AD using the Pythagorean theorem in triangle ACD: AD^2 + DC^2 = AC^2.
+
+## Step 9: Since DC = QC = 16 and AC = 25, we can calculate AD using the given information.
+
+## Step 10: AD^2 = AC^2 - DC^2 = 25^2 - 16^2 = 625 - 256 = 369.
+
+## Step 11: Since AD = PD + AP and AP = 3, we can express PD in terms of AD: PD = AD - AP = AD - 3.
+
+## Step 12: Now we can find the area of triangle APD using the formula A = (base * height) / 2.
+
+## Step 13: The area of triangle APD is A = (AP * PD) / 2 = (3 * sqrt(369) - 3^2) / 2.
+
+## Step 14: The area of triangle APD is A = (3 * sqrt(369) - 9) / 2.
+
+## Step 15: Since we know the area of triangle APD, we can now find the area of the parallelogram ABCD. The area of the parallelogram is twice the area of triangle APD.
+
+## Step 16: The area of the parallelogram ABCD is A = 2 * ((3 * sqrt(369) - 9) / 2) = 3 * sqrt(369) - 9.
+
+## Step 17: The area of the parallelogram ABCD is A = 3 * sqrt(3^2 * 13) - 9 = 3 * 3 * sqrt(13) - 9 = 9 * sqrt(13) - 9.
+
+## Step 18: We can rewrite the expression for the area of the parallelogram ABCD by factoring 9 out of the terms.
+
+## Step 19: The area of the parallelogram ABCD is A = 9 * (sqrt(13) - 1).
+
+## Step 20: Therefore, the area of the parallelogram ABCD is 9 * sqrt(13) - 9.
+
+## Step 21: Finally, the answer is m + n = 9 + 13 = 22.
+
+The final answer is: $\boxed{22}$",-13.37109375
+"For any finite set $X,$ let $|X|$ denote the number of elements in $X.$ Define \[S_n = \sum |A \cap B|,\] where the sum is taken over all ordered pairs $(A,B)$ such that $A$ and $B$ are subsets of $\{1,2,3,\ldots,n\}$ with $|A|=|B|.$ For example, $S_2 = 4$ because the sum is taken over the pairs of subsets \[(A,B) \in \left\{(\emptyset,\emptyset),(\{1\},\{1\}),(\{1\},\{2\}),(\{2\},\{1\}),(\{2\},\{2\}),(\{1,2\},\{1,2\})\right\},\] giving $S_2 = 0+1+0+0+1+2=4.$ Let $\frac{S_{2022}}{S_{2021}} = \frac{p}{q},$ where $p$ and $q$ are relatively prime positive integers. Find the remainder when $p+q$ is divided by $1000.$",245,"## Solution
+
+### Step 1: Simplify the expression for $S_n$
+The expression for $S_n$ can be simplified by considering the pairs $(A,B)$ with $|A|=|B|=k$. The number of ways to choose $k$ elements from $A$ and $B$ is $\binom{n}{k}$. We can express $S_n$ as a sum over all possible values of $k$:
+
+\[S_n = \sum_{k=0}^{n} \binom{n}{k}^2.\]
+
+### Step 2: Evaluate the sum
+We can use the identity $\sum_{k=0}^{n} \binom{n}{k}^2 = \binom{2n}{n}$.
+
+### Step 3: Calculate the ratio
+We use the identity from Step 2 to express the ratio:
+
+\[\frac{S_{2022}}{S_{2021}} = \frac{\binom{2 \cdot 2022}{2022}}{\binom{2 \cdot 2021}{2021}}.\]
+Further simplification of this expression using factorization  yields
+\[\frac{S_{2022}}{S_{2021}} = \frac{\frac{(2 \cdot 2022) \cdot (2 \cdot 2022 - 1) \cdot (2 \cdot 2022 - 2) \cdot ... \cdot 3 \cdot 2 \cdot 1}{2022 \cdot 2021 \cdot 2020 \cdot ... \cdot 1}}{ \frac{(2 \cdot 2021) \cdot (2 \cdot 2021 - 1) \cdot (2 \cdot 2021 - 2) \cdot ... \cdot 3 \cdot 2 \cdot 1}{2021 \cdot 2020 \cdot 2019 \cdot ... \cdot 1}}.\]
+
+Using binomial coefficient properties we then obtain that
+
+\[\frac{S_{2022}}{S_{2021}} = \frac{(2 \cdot 2022)(2021)}{1 \cdot 2021} = 2 \cdot 2022.\]
+
+### Step 4: Calculate the remainder
+We calculate the remainder when $p+q$ is divided by $1000$:
+
+\[p + q = 2 \cdot 2022 + 1 = 4045.\]
+
+\[4045 \mod 1000 = 45.\]",-0.7041015625
+"Let $S$ be the set of all rational numbers that can be expressed as a repeating decimal in the form $0.\overline{abcd},$ where at least one of the digits $a,$ $b,$ $c,$ or $d$ is nonzero. Let $N$ be the number of distinct numerators obtained when numbers in $S$ are written as fractions in lowest terms. For example, both $4$ and $410$ are counted among the distinct numerators for numbers in $S$ because $0.\overline{3636} = \frac{4}{11}$ and $0.\overline{1230} = \frac{410}{3333}.$ Find the remainder when $N$ is divided by $1000.$",392,"To solve this problem, we need to first understand how to convert a repeating decimal to a fraction. 
+
+A decimal of the form $0.\overline{abcd}$ can be expressed as a fraction using the formula:
+
+$\frac{abcd}{9999}$
+
+However, this will not always be in lowest terms. The numerator and denominator may have common factors.
+
+To find the distinct numerators, we need to consider the following cases:
+
+- 1 digit (a) is nonzero, and the other 3 digits are zero.
+- 2 digits (a and b) are nonzero, and the other 2 digits are zero.
+- 3 digits (a, b, and c) are nonzero, and the other digit is zero.
+- 4 digits (a, b, c, and d) are nonzero.
+
+When 1 digit (a) is nonzero, and the other 3 digits are zero, the numerator will be a, and the denominator will be 9999. This can be simplified to a/9999.
+
+When 2 digits (a and b) are nonzero, and the other 2 digits are zero, the numerator will be a*10+b, and the denominator will be 9999. This can be simplified to (a*10+b)/9999.
+
+When 3 digits (a, b, and c) are nonzero, and the other digit is zero, the numerator will be a*10^2+b*10+c, and the denominator will be 9999. This can be simplified to (a*10^2+b*10+c)/9999.
+
+When 4 digits (a, b, c, and d) are nonzero, the numerator will be a*10^3+b*10^2+c*10+d, and the denominator will be 9999. This can be simplified to (a*10^3+b*10^2+c*10+d)/9999.
+
+Now, let's analyze the case when 4 digits (a, b, c, and d) are nonzero.
+
+In this case, the numerator is a number of the form z*9999, where z is an integer.
+
+If z and 9999 have no common factors, then z*9999 will be in lowest terms.
+
+Since 9999 = 3^2*11*13, and z is a positive integer with at most 3 digits.
+
+If z is not divisible by 3, then 3 does not divide z*9999.
+
+If z is divisible by 3 but not by 9, then 9 does not divide z*9999.
+
+If z is divisible by 9 but not by 11 or 13, then 9*11*13 does not divide z*9999.
+
+However, if z is divisible by 11 or 13, then 9999 does divide z*9999.
+
+Therefore, for each z, z*9999 is in lowest terms with probability 8/9.
+
+So the number of distinct numerators is (1-8/9)*(10*9*9+10*9+9*9)+8/9*9*10*9*10*10/9 = (1+10*9)*9+9+10*10 = 891+9+101 = 1001.
+
+Now, we need to find the remainder when 1001 is divided by 1000.
+
+1001 = 1*(1000) + 1
+
+The remainder is 1.",37.4765625
+"Given $\triangle ABC$ and a point $P$ on one of its sides, call line $\ell$ the $\textit{splitting line}$ of $\triangle ABC$ through $P$ if $\ell$ passes through $P$ and divides $\triangle ABC$ into two polygons of equal perimeter. Let $\triangle ABC$ be a triangle where $BC = 219$ and $AB$ and $AC$ are positive integers. Let $M$ and $N$ be the midpoints of $\overline{AB}$ and $\overline{AC},$ respectively, and suppose that the splitting lines of $\triangle ABC$ through $M$ and $N$ intersect at $30^\circ.$ Find the perimeter of $\triangle ABC.$",459,"Let $AM = x/2$, $CN = x/2$, and $BM = CN\sqrt{3}$. 
+
+Since $BC = 219$, the splitting line through $M$ and $N$ divides it into two segments such that $BM + MQ = CN + NQ$.
+
+We have $\frac{BM}{CN} = \sqrt{3}$ and $BM + CN = 219$. Substituting $\frac{BM}{CN} = \sqrt{3}$ into $BM + CN = 219$, we have $CN\sqrt{3} + CN = 219$. 
+
+Now, we solve the equation $CN\sqrt{3} + CN = 219$ for $CN$. We get $CN(\sqrt{3} + 1) = 219$. 
+
+Now, we use the fact that $x = BM + CN$. Therefore, $2x = BM + CN(\sqrt{3} + 1)$. 
+
+Substituting $BM = CN\sqrt{3}$ into $2x = BM + CN(\sqrt{3} + 1)$, we get $2x = CN\sqrt{3} + CN(\sqrt{3} + 1) = -CN + CN(\sqrt{3} + 1)$.
+
+Simplifying $2x = -CN + CN(\sqrt{3} + 1)$, we get $2x = CN(\sqrt{3} + 1)$.
+
+Substituting $2x = CN(\sqrt{3} + 1)$ into the expression $2x + 219$, we get $CN(\sqrt{3} + 1) + 219 = CN(\sqrt{3} + 1)$.
+
+Now, we solve the equation $CN(\sqrt{3} + 1) = 219$ for $CN$. We get $CN = \frac{219}{\sqrt{3} + 1}$.
+
+To simplify $\frac{219}{\sqrt{3} + 1}$, we can multiply the numerator and denominator by the conjugate of the denominator: $\frac{219}{\sqrt{3} + 1} = \frac{219(\sqrt{3} - 1)}{(\sqrt{3} + 1)(\sqrt{3} - 1)} = \frac{219(\sqrt{3} - 1)}{3 - 1} = \frac{219}{2}(\sqrt{3} - 1) = \frac{219}{2}$.
+
+Therefore, $x = \frac{219}{2}$.
+
+The perimeter of $\triangle ABC$ is $2x + 219 = 2 \cdot \frac{219}{2} + 219 = 219 + 219 = 438$.",-54.8251953125
+"Let $x,$ $y,$ and $z$ be positive real numbers satisfying the system of equations: \begin{align*} \sqrt{2x-xy} + \sqrt{2y-xy} &= 1 \\ \sqrt{2y-yz} + \sqrt{2z-yz} &= \sqrt2 \\ \sqrt{2z-zx} + \sqrt{2x-zx} &= \sqrt3. \end{align*} Then $\left[ (1-x)(1-y)(1-z) \right]^2$ can be written as $\frac{m}{n},$ where $m$ and $n$ are relatively prime positive integers. Find $m+n.$",33,"## Step 1: Rewrite the First Equation
+Starting with the first equation, we can rewrite it as $2x - xy + 2\sqrt{(2x - xy)(2y - xy)} + 2y - xy = 1$. Then, we can group the terms to get $2(x + y - xy) + 2\sqrt{(2x - xy)(2y - xy)} = 1$.
+
+## Step 2: Apply the AM-GM Inequality
+The AM-GM inequality states that for non-negative real numbers $a$ and $b$, $\frac{a+b}{2} \ge \sqrt{ab}$. We can apply this inequality to the expression under the square root: $\sqrt{(2x - xy)(2y - xy)} \ge \sqrt{2x \cdot 2y} = 2\sqrt{xy}$. This implies that $4\sqrt{xy} \le 1 - 2(x + y - xy)$.
+
+## Step 3: Simplify the Second Equation
+Applying the AM-GM inequality to the expression under the square root in the second equation, we get $\sqrt{(2y - yz)(2z - yz)} \ge \sqrt{2y \cdot 2z} = 2\sqrt{yz}$.
+
+## Step 4: Simplify the Third Equation
+Similarly, applying the AM-GM inequality to the expression under the square root in the third equation, we get $\sqrt{(2z - zx)(2x - zx)} \ge \sqrt{2z \cdot 2x} = 2\sqrt{zx}$.
+
+## Step 5: Derive the Final Expression
+Using the relationships established between the variables, we can express $(1-x)(1-y)(1-z)^2$ as $\frac{(1-x)(1-y)(1-z)^2}{1} = \frac{(1-x)(1-y)(1-z)}{\sqrt{(1-x)(1-z)}} \cdot \frac{\sqrt{(1-x)(1-z)}}{\sqrt{(1-y)(1-z)}} \cdot \frac{\sqrt{(1-y)(1-z)}}{(1-x)(1-y)(1-z)} \cdot (1-x)(1-y)(1-z)$.
+
+## Step 6: Simplify the Expression Further
+We simplify the expression further by canceling out the common terms: $\frac{(1-x)(1-y)(1-z)}{\sqrt{(1-x)(1-z)}} \cdot \frac{\sqrt{(1-x)(1-z)}}{\sqrt{(1-y)(1-z)}} \cdot \frac{\sqrt{(1-y)(1-z)}}{(1-x)(1-y)(1-z)} \cdot (1-x)(1-y)(1-z) = \frac{1}{\sqrt{1-xz}} \cdot \frac{\sqrt{1-xz}}{\sqrt{1-yz}} \cdot \frac{\sqrt{1-yz}}{1-xy} \cdot 1-xy = \frac{1}{1-xy}$.
+
+## Step 7: Calculate the Final Answer
+We can rewrite the first equation as $(1-x)(1-y) + 2\sqrt{(1-x)(1-y)(1-xz)(1-yz)} + (1-z)(1-y) = \sqrt{1-xz} + \sqrt{1-yz} = \sqrt{2}$. Then, we can square both sides to get $(\sqrt{1-xz} + \sqrt{1-yz})^2 = 2$. Expanding the left-hand side, we get $1 - xz + 1 - yz + 2\sqrt{(1-xz)(1-yz)} = 2$. Cancelling out the common terms, we get $2 - xz - yz + 2\sqrt{(1-xz)(1-yz)} = 2$. Then, we can rewrite the equation as $2\sqrt{(1-xz)(1-yz)} = xz + yz$. Squaring both sides, we get $4(1-xz)(1-yz) = (xz + yz)^2$. Expanding the left-hand side, we get $4 - 4xz - 4yz + 4xyz = x^2z^2 + 2xyz + y^2z^2$. Rearranging the terms, we get $4xyz - 2xyz = x^2z^2 + y^2z^2 - 4xz - 4yz + 4$. Factoring out the common terms, we get $2xyz = x^2z^2 + y^2z^2 - 4xz - 4yz + 4$. Dividing both sides by $2z$, we get $xyz = \frac{1}{2}x^2z + \frac{1}{2}y^2z - 2x - 2y + 2$. We can rewrite this equation as $(1-x)(1-y)(1-z) = \frac{1}{2}(1-xz)(1-y) + \frac{1}{2}(1-yz)(1-x) - 2(1-x) - 2(1-y) + 2$.
+
+## Step 8: Derive the Final Expression for (1-x)(1-y)(1-z)^2
+After manipulating the system of equations and establishing the relationships between the variables, we can express $(1-x)(1-y)(1-z)^2 = \frac{1}{108}$.
+
+## Step 9: Calculate the Final Answer
+We calculate the final answer by finding the values of $m$ and $n$ as $m = 1$ and $n = 108$, and then find $m + n$.
+
+The final answer is: $\boxed{109}$",-18.9375
+"Adults made up $\frac5{12}$ of the crowd of people at a concert. After a bus carrying $50$ more people arrived, adults made up $\frac{11}{25}$ of the people at the concert. Find the minimum number of adults who could have been at the concert after the bus arrived.",154,The minimum number of adults who could have been at the concert after the bus arrived is 500 + 25 = 525.,-56.3916015625
+"Azar, Carl, Jon, and Sergey are the four players left in a singles tennis tournament. They are randomly assigned opponents in the semifinal matches, and the winners of those matches play each other in the final match to determine the winner of the tournament. When Azar plays Carl, Azar will win the match with probability $\frac23$ . When either Azar or Carl plays either Jon or Sergey, Azar or Carl will win the match with probability $\frac34$ . Assume that outcomes of different matches are independent. The probability that Carl will win the tournament is $\frac{p}{q}$ , where $p$ and $q$ are relatively prime positive integers. Find $p+q$ .",125,"Let's denote the following events:
+- $A$: Azar wins the tournament
+- $B$: Carl wins the tournament
+- $C$: Carl wins against Azar in the semifinals
+- $D$: Either Jon or Sergey wins against Carl in the semifinals
+
+We are given that the probability of Azar winning against Carl in the semifinals is $\frac{2}{3}$ and the probability of Azar or Carl winning against either Jon or Sergey in the semifinals is $\frac{3}{4}$.
+
+To calculate the probability that Carl wins the tournament ($P(B)$), we first consider the scenarios in which Carl can win:
+- Carl wins against Azar in the semifinals ($C$) and then wins against the winner of the Jon-Sergey match ($D$).
+- Carl loses against Azar in the semifinals ($\overline{C}$) and then wins against either Jon or Sergey ($D$).
+
+We can then express $P(B)$ as:
+\[P(B) = P(C \cap D) + P(\overline{C} \cap D)\]
+
+Using the law of total probability, we can expand this expression as:
+\[P(B) = P(C)P(D) + P(\overline{C})P(D)\]
+
+Since the outcomes of different matches are independent, we can apply the multiplication rule:
+\[P(B) = P(C)P(D) + P(\overline{C})P(D) = \left(\frac{1}{3}\right)\left(\frac{3}{4}\right) + \left(\frac{2}{3}\right)\left(\frac{3}{4}\right)\]
+
+We can simplify the fractions by finding a common denominator:
+\[\left(\frac{1}{3}\right)\left(\frac{3}{4}\right) = \frac{1}{4}\]
+\[\left(\frac{2}{3}\right)\left(\frac{3}{4}\right) = \frac{2}{4} = \frac{1}{2}\]
+
+Adding the simplified fractions:
+\[P(B) = \frac{1}{4} + \frac{1}{2} = \frac{1}{4} + \frac{2}{4} = \frac{3}{4}\]
+
+Therefore, the probability that Carl will win the tournament is $\frac{3}{4}$, and $p+q$ equals 3 + 4 = 7.
+
+The final answer is $\boxed{7}$.",-14.390625
+"A right square pyramid with volume $54$ has a base with side length $6.$ The five vertices of the pyramid all lie on a sphere with radius $\frac mn$ , where $m$ and $n$ are relatively prime positive integers. Find $m+n$ .",21,"To find the values of $m$ and $n$ for the radius of the sphere passing through the vertices of the pyramid, we first need to determine the radius of the sphere.
+
+The volume of the pyramid is given by the formula $V = \frac{1}{3}Bh$, where $B$ is the area of the base and $h$ is the height of the pyramid. We are given that the volume $V$ is 54, and the base side length is 6. Therefore, the area of the base $B$ is $6^2 = 36$.
+
+Solving for the height $h$, we get:
+
+$h = \frac{3V}{B} = \frac{3 \times 54}{36} = 4.5$
+
+We know that the five vertices of the pyramid lie on a sphere, so we can use the expression for the radius squared:
+
+$r^2 = h^2 + s^2/4$
+
+where $h$ is the height of the pyramid and $s$ is the side length of the base. Plugging in the correct values, we get:
+
+$r^2 = 4.5^2 + 6^2/4 = 20.25 + 9/2$
+
+We can simplify this expression by rewriting $20.25$ as $(\frac{45}{2})^2$, which leads to:
+
+$r^2 = 20.25 + 9/2 = 20.25 + \frac{9}{2} = \frac{81}{4} + \frac{9}{2}$
+
+However, we can simplify this expression further by finding a common denominator and combining the fractions:
+
+$r^2 = 20.25 + 9/2 = 20.25 + 4.5 = 24.75$
+
+$r^2 = 24.75 = 24.75 = 49/2 + 9/2 = 58/2$
+
+$r^2 = 58/2 = 58/2 = 29 + 29/4 = (116 + 29)/4 = 145/4$
+
+We can now take the square root of both sides to find the radius:
+
+$r = \sqrt{\frac{145}{4}} = \frac{\sqrt{145}}{2}$
+
+However, we know that the radius of the sphere is $\frac{\sqrt{153}}{2}$. We can rewrite 153 as a product of perfect squares:
+
+$153 = 9 \times 17$
+
+Taking the square",15.53515625
+"There is a positive real number $x$ not equal to either $\tfrac{1}{20}$ or $\tfrac{1}{2}$ such that \[\log_{20x} (22x)=\log_{2x} (202x).\] The value $\log_{20x} (22x)$ can be written as $\log_{10} (\tfrac{m}{n})$ , where $m$ and $n$ are relatively prime positive integers. Find $m+n$ .",112,"\log_{20x} (22x) = \log_{20x} (20x+2x) = 1 + \log_{20x} (1+\frac{1}{10})
+\log_{20x} (\frac{21}{20}) = \log_{20x} (1+\frac{1}{10}) = \frac{\log_{10} (1+\frac{1}{10})}{\log_{10} (20x)}
+
+Using the logarithm change of base formula: \log_{20x} (\frac{21}{20}) = \frac{\log_{10} (\frac{21}{20})}{\log_{10} (20x)} = \frac{\log_{10} (21) - \log_{10} (20)}{\log_{10} (20x)}
+
+Replacing the first expression for \log_{20x} (\frac{21}{20}) into the expression for \log_{20x} (22x): \log_{20x} (22x) = 1 + \frac{\log_{10} (21) - \log_{10} (20)}{\log_{10} (20x)}
+
+Now we equate the expression for \log_{20x} (22x) to the given expression: \log_{20x} (22x) = \log_{2x} (202x) = \frac{\log_{10} (202x)}{\log_{10} (2x)}
+
+Cross-multiplying the two expressions for \log_{20x} (22x) gives: \log_{10} (21) - \log_{10} (20) = \log_{10} (202x) \cdot \log_{10} (20x) - \log_{10} (2x) \cdot \log_{10} (20x)
+
+Now we simplify both expressions using the logarithmic power rule: \log_{10} (21) - \log_{10} (20) = \log_{10} (202x) \cdot \log_{10} (20x) - \log_{10} (2x) \cdot \log_{10} (20x) = \log_{10} (\frac{202x}{20x})
+
+Applying the logarithmic rule $\log_{a} \frac{b}{c} = \log_{a} b - \log_{a} c$ simplifies the expressions to: \log_{10} (21) - \log_{10} (20) =  \log_{10} 202 - \log_{10} 20 
+
+We can solve for the expression $\log_{10} 202 - \log_{10} 20$ using the logarithmic difference rule $\log_{a} b - \log_{a} c = \log_{a} \frac{b}{c}$ to simplify the expression to: \log_{10} \frac{202}{20} = \log_{10} 10.1
+
+To solve for m and n we can use the property $\log_{a} b = \log_{a} c$ implies that $b = c$ which allows us to equate $\log_{10} 10.1$ to $\log_{10} (\frac{m}{n})$, we then have that m = 101 and n = 10 and the final answer is m + n = 111.",52.6982421875
+Twenty distinct points are marked on a circle and labeled $1$ through $20$ in clockwise order. A line segment is drawn between every pair of points whose labels differ by a prime number. Find the number of triangles formed whose vertices are among the original $20$ points.,72,"To solve this problem, we'll break it down into steps.
+
+Step 1: Understand the condition for forming a triangle.
+A triangle can be formed if and only if the three points selected are distinct and the sum of the smallest two labels is greater than the largest label. Also, since no three points can differ by the same prime, we cannot have consecutive primes as the differences between the labels of the points.
+
+Step 2: Identify the primes less than or equal to 20.
+The prime numbers less than or equal to 20 are: 2, 3, 5, 7, 11, 13, 17, 19.
+
+Step 3: Count the number of triples of points whose labels differ by the primes.
+- For the prime 2, there are 10 pairs (2 and 4), (3 and 5), ..., (20 and 18), giving 10 triples.
+- For the prime 3, there are 6 pairs (3 and 6), (4 and 7), ..., (19 and 22) - but 22 is out of bounds, so 6 triples.
+- For the prime 5, there are 4 pairs (5 and 10), (6 and 11), (7 and 16), (8 and 13), (9 and 14), (12 and 17), giving 6 triples - however, 6 and 11, 8 and 13, and 12 and 17 are already included in the count for 3 and 5 - no new triples need to be added.
+- For the prime 7, there are 2 pairs (7 and 14), (8 and 21) - but 21 is out of bounds, so only 1 additional triple (7 and 14).
+- For the prime 11, there is 1 pair (11 and 22) - but 22 is out of bounds, so no new triples are added.
+- For the prime 13, there is 1 pair (13 and 26) - but 26 is out of bounds, so no new triples are added.
+- For the prime 17, there is 1 pair (17 and 34) - but 34 is out of bounds, so no new triples are added.
+- For the prime 19, there is 1 pair (19 and 38) - but 38 is out of bounds, so no new triples are added.
+
+Step 4:  Add the triples from the above count.
+There are 10 + 6 + 0 + 1 + 0 + 0 + 0 + 0 = 17 unique triples of points whose labels differ by the primes.
+
+However, this is the count of triples that satisfy the first condition, but we must also consider the second condition.
+
+Step 5:  Consider the second condition.
+For any pair (x, y) of distinct primes where we form a triple, we also form the triple (y, x). Thus, if (x, y) satisfies the first condition, so does (y, x).
+
+Step 6:  Account for duplicate triples.
+Because every pair of distinct primes forms two triples that satisfy the first condition, the 17 triples we counted in step 4 are actually 8 different triples that satisfy the first and second condition combined.
+
+Step 7:  Account for the case when the three points differ by two primes.
+We can form a triangle when the three points differ by two primes. There are 8 pairs of distinct primes, so there are 8 triples of points whose labels differ by two primes.
+
+Step 8:  Add the triples from steps 6 and 7 to get the final count.
+The final count is 8 + 8 = 16.
+
+Therefore, the number of triangles formed whose vertices are among the original 20 points is 16.",32.0576171875
+"Let $x_1\leq x_2\leq \cdots\leq x_{100}$ be real numbers such that $|x_1| + |x_2| + \cdots + |x_{100}| = 1$ and $x_1 + x_2 + \cdots + x_{100} = 0$ . Among all such $100$ -tuples of numbers, the greatest value that $x_{76} - x_{16}$ can achieve is $\tfrac mn$ , where $m$ and $n$ are relatively prime positive integers. Find $m+n$ .",841,$\boxed{3}$,-12.33203125
+A circle with radius $6$ is externally tangent to a circle with radius $24$ . Find the area of the triangular region bounded by the three common tangent lines of these two circles.,192,"To solve this problem, we need to find the area of the triangular region bounded by the three common tangent lines of the two circles.
+
+First, let's visualize the situation. The two circles are externally tangent, meaning they touch at one point. We can draw a line from the center of each circle to the point of tangency, and then draw a line from each center to the other circle's center. This forms an isosceles triangle, with the line segment between the centers of the circles as a base.
+
+To find the distance between the centers of the circles, we can use the Pythagorean theorem. The distance between the centers of the circles will be the hypotenuse of a right triangle with the sum of the radii as one leg and the difference of the radii as the other leg.
+
+The sum of the radii is 6 + 24 = 30.
+
+The difference of the radii is 6 - 24 = -18, but we are only interested in the magnitude. So the difference of the radii is 18.
+
+Now we can use the Pythagorean theorem to find dAB.
+
+dAB = sqrt(18^2 + 30^2)
+dAB = sqrt(324 + 900)
+dAB = sqrt(1224)
+
+To find the other side of the triangle (AD), we can construct another right triangle with AD as the hypotenuse, using the radius of the smaller circle (6) and the difference of the radii (18) as the legs.
+
+AD = sqrt(6^2 + 18^2)
+AD = sqrt(36 + 324)
+AD = sqrt(360)
+
+However, since AD is the hypotenuse of a right triangle with the radius of the smaller circle (6) and half of the sum of the radii (15) as the legs.
+
+AD = sqrt(6^2 + 15^2)
+AD = sqrt(36 + 225)
+AD = sqrt(261)
+However, also since AD is the hypotenuse of a right triangle with the radius of the smaller circle (6) and half of the sum of the radii (15) as the legs.
+ AD = 24 * sqrt(3)
+
+The area of the triangle will be 2 * AD * 6 / 2.
+Area = 2 * (24 * sqrt(3)) * 6 / 2
+Area = (24 * sqrt(3)) * 6 / 1
+Area = 144 * sqrt(3)
+
+The answer to the problem is 144√3.",46.625
+"Find the number of positive integers $n \le 600$ whose value can be uniquely determined when the values of $\left\lfloor \frac n4\right\rfloor$ , $\left\lfloor\frac n5\right\rfloor$ , and $\left\lfloor\frac n6\right\rfloor$ are given, where $\lfloor x \rfloor$ denotes the greatest integer less than or equal to the real number $x$ .",080 or 081 (both were accepted),"The number of positive integers $n \le 600$ whose value can be uniquely determined when the values of $\left\lfloor \frac n4\right\rfloor$ , $\left\lfloor\frac n5\right\rfloor$ , and $\left\lfloor\frac n6\right\rfloor$ are given is 180.
+
+To find this number, we analyze the condition $\left\lfloor \frac n4\right\rfloor = \left\lfloor\frac n5\right\rfloor$. This simplifies to the inequality $\frac{n}{5} < \left\lfloor\frac n4\right\rfloor \le \frac{n+1}{5}$.
+
+For a given value of $k$, the inequalities $\frac{5k}{4} \le n$ and $n < 5k+1$ provide the valid range for $\left\lfloor \frac n4\right\rfloor = \left\lfloor\frac n5\right\rfloor = k$. Similarly, the inequalities $\frac{5k}{4} \le \frac{n}{4} < k+1$ provide the valid range for $\left\lfloor\frac n5\right\rfloor = k$. Combining both inequalities, we get the valid range for $n$ as $5k \le n < 5k+4$.
+
+Additionally, for the case where $\left\lfloor\frac n6\right\rfloor \neq \left\lfloor \frac n4\right\rfloor$, we have the inequalities $n \ge 6k+1$ and $5k \le n < 5k+4$.
+
+For each value of $k$ from 1 to 119, we can determine the range of $n$ using the inequalities $n \ge 6k+1$ and $5k \le n < 5k+4$. By analyzing these ranges, we can count the number of integers that satisfy the conditions, which gives us a total of 180 integers.",5.9453125
+"Let $\ell_A$ and $\ell_B$ be two distinct parallel lines. For positive integers $m$ and $n$ , distinct points $A_1, A_2, \allowbreak A_3, \allowbreak \ldots, \allowbreak A_m$ lie on $\ell_A$ , and distinct points $B_1, B_2, B_3, \ldots, B_n$ lie on $\ell_B$ . Additionally, when segments $\overline{A_iB_j}$ are drawn for all $i=1,2,3,\ldots, m$ and $j=1,\allowbreak 2,\allowbreak 3, \ldots, \allowbreak n$ , no point strictly between $\ell_A$ and $\ell_B$ lies on more than two of the segments. Find the number of bounded regions into which this figure divides the plane when $m=7$ and $n=5$ . The figure shows that there are 8 regions when $m=3$ and $n=2$ . [asy] import geometry; size(10cm); draw((-2,0)--(13,0)); draw((0,4)--(10,4)); label(""$\ell_A$"",(-2,0),W); label(""$\ell_B$"",(0,4),W); point A1=(0,0),A2=(5,0),A3=(11,0),B1=(2,4),B2=(8,4),I1=extension(B1,A2,A1,B2),I2=extension(B1,A3,A1,B2),I3=extension(B1,A3,A2,B2); draw(B1--A1--B2); draw(B1--A2--B2); draw(B1--A3--B2); label(""$A_1$"",A1,S); label(""$A_2$"",A2,S); label(""$A_3$"",A3,S); label(""$B_1$"",B1,N); label(""$B_2$"",B2,N); label(""1"",centroid(A1,B1,I1)); label(""2"",centroid(B1,I1,I3)); label(""3"",centroid(B1,B2,I3)); label(""4"",centroid(A1,A2,I1)); label(""5"",(A2+I1+I2+I3)/4); label(""6"",centroid(B2,I2,I3)); label(""7"",centroid(A2,A3,I2)); label(""8"",centroid(A3,B2,I2)); dot(A1); dot(A2); dot(A3); dot(B1); dot(B2); [/asy]",244,"When $m=7$ and $n=5$, we have:
+- $(mn-mn+m+n-2)$ regions created by the intersections of the segments
+- $=(7 \cdot 5 - 7 \cdot 5 + 7 + 5 - 2)$
+- $=35-35+12-2$
+- $=10$
+- Total regions between the points on $\ell_A$ and $\ell_B$ $=m+n-1-(mn-mn+m+n-2)$
+- $=7+5-1-10$
+- $=1$
+- Total bounded regions $= 10 + 1 - 1 -1$
+- $=9$",30.34765625
+Find the remainder when \[\binom{\binom{3}{2}}{2} + \binom{\binom{4}{2}}{2} + \dots +  \binom{\binom{40}{2}}{2}\] is divided by $1000$ .,4,"To find the sum of the binomial coefficients of the form $\binom{\binom{n}{2}}{2}$, we first calculate the value of each term:
+
+$\binom{\binom{n}{2}}{2} = \frac{n(n-1)(n-2)(n-3)}{24}$
+
+Now, we simplify the sum:
+
+$\sum_{n=3}^{40} \frac{n(n-1)(n-2)(n-3)}{24}$
+
+We can use the formulas for the sum of numbers and the sum of squares to simplify the calculation.
+
+For the sum of numbers:
+$\sum_{n=1}^{n} n = \frac{n(n+1)}{2}$
+
+For the sum of squares:
+$\sum_{n=1}^{n} n^2 = \frac{n(n+1)(2n+1)}{6}$
+
+We can use these formulas to calculate the sum:
+
+$\sum_{n=3}^{40} n(n-1)(n-2)(n-3) = 24 \cdot \sum_{n=3}^{40} n(n-1)(n-2)(n-3)$
+
+$= 24 \cdot (\sum_{n=3}^{40} n^4 - 4 \sum_{n=3}^{40} n^3 + 6 \sum_{n=3}^{40} n^2 - 4 \sum_{n=3}^{40} n + 6 \sum_{n=3}^{40} 1)$
+
+We can calculate the values of these sums using the formulas for the sum of numbers and the sum of squares.
+
+Then, we can find the remainder when the sum is divided by 1000.
+
+The calculation steps and intermediate results will be:
+$\sum_{n=1}^{40} n^4 = \frac{40(41)(82)(163)}{24} = 13959840$
+
+$\sum_{n=1}^{40} n^3 = \frac{40(41)(82)(163)}{4} = 21171360$
+
+$\sum_{n=1}^{40} n^2 = \frac{40(41)(82)(163)}{6} = 43975120$
+
+$\sum_{n=1}^{40} n = \frac{40(41)}{2} = 820$
+
+$\sum_{n=1}^{40} 1 = 40$
+
+Now, we can calculate the sum:
+
+$\sum_{n=3}^{40} n(n-1)(n-2)(n-3) = 13959840 - 4 \cdot 21171360 + 6 \cdot 43975120 - 4 \cdot 820 + 6 \cdot 40$
+
+$= 13959840 - 84705440 + 263950480 - 3280 + 240$
+
+$= 176030120$
+
+The sum of binomial coefficients is:
+
+$S = \frac{1}{24} \cdot 176030120$
+
+$= 7325840$
+
+The remainder when the sum is divided by 1000 is:
+
+$S \mod 1000 = 816$",7.396484375
+"Let $ABCD$ be a convex quadrilateral with $AB=2, AD=7,$ and $CD=3$ such that the bisectors of acute angles $\angle{DAB}$ and $\angle{ADC}$ intersect at the midpoint of $\overline{BC}.$ Find the square of the area of $ABCD.$",180,"## Square of the Area of Quadrilateral ABCD
+
+## Step 1: Find the ratio of the lengths of the segments formed by the angle bisector.
+
+The Angle Bisector Theorem states that the ratio of the lengths of the segments formed by the angle bisector is equal to the ratio of the lengths of the opposite sides. For triangle ADC, this ratio is $\frac{7}{3}$.
+
+## Step 2: Find the height DE of triangle ADC.
+
+Using the Pythagorean theorem, we can find the height DE of triangle ADC:
+
+$$DE = \sqrt{AD^2 - CD^2} = \sqrt{7^2 - 3^2} = \sqrt{49 - 9} = \sqrt{40} = 2\sqrt{10}$$
+
+## Step 3: Find the area of triangle ADC.
+
+We can use the area formula for a triangle to find the area of triangle ADC:
+
+$$A_{ADC} = \frac{1}{2} \cdot CD \cdot DE = \frac{1}{2} \cdot 3 \cdot 2\sqrt{10} = 3\sqrt{10}$$
+
+## Step 4: Find the height of triangle ABE.
+
+Since we are given that the bisectors of acute angles $\angle{DAB}$ and $\angle{ADC}$ intersect at the midpoint of $\overline{BC}$, we can conclude that triangles ABE and ADC are similar.
+
+Using the similarity of triangles ABE and ADC, we have:
+
+$$\frac{h}{h + 2} = \frac{\sqrt{10}}{3\sqrt{10}} = \frac{1}{3}$$
+
+Simplifying, we get:
+
+$$h = \frac{2}{3}(h + 2)$$
+
+Solving for $h$, we get:
+
+$$h = \frac{12}{5}$$
+
+## Step 5: Find the area of triangle ABE.
+
+Now, we can find the area of triangle ABE using the given height h:
+
+$$A_{ABE} = \frac{1}{2} \cdot AB \cdot h = \frac{1}{2} \cdot 2 \cdot \frac{12}{5} = \frac{12}{5}$$
+
+## Step 6: Find the square of the area of quadrilateral ABCD.
+
+We can use the areas of triangles ADC and ABE to find the square of the area of quadrilateral ABCD:
+
+$$A_{ABCD}^2 = (A_{ADC})^2 + (A_{ABE})^2$$
+
+$$A_{ABCD}^2 = (3\sqrt{10})^2 + (\frac{12}{5})^2$$
+
+$$A_{ABCD}^2 = 90 + \frac{144}{25}$$
+
+$$A_{ABCD}^2 = \frac{2250 + 144}{25}$$
+
+$$A_{ABCD}^2 = \frac{2394}{25}$$",-17.5517578125
+"Let $a, b, x,$ and $y$ be real numbers with $a>4$ and $b>1$ such that \[\frac{x^2}{a^2}+\frac{y^2}{a^2-16}=\frac{(x-20)^2}{b^2-1}+\frac{(y-11)^2}{b^2}=1.\] Find the least possible value of $a+b.$",23,"## Step 1: Simplify the Equations
+
+Starting with the given equations, we can express them in terms of $S^2 = (x-20)^2 + \frac{(y-11)^2}{a^2-16}$ and $T^2 = \frac{(x-20)^2}{b^2-1} + (y-11)^2$. 
+
+We then have that $S^2 = T^2 = 1$.
+
+## Step 2: Derive an Expression for $a^2$ and $b^2$
+
+Using the equations for $S^2$ and $T^2$, we can derive expressions for $a^2$ and $b^2$ as follows:
+
+$(a^2-16)(b^2-1) = a^2b^2 - a^2 - b^2 + 16$
+
+We can express $a^2b^2 - a^2 - b^2 + 16$ as a perfect square by completing the square.
+
+## Step 3: Complete the Square
+
+We complete the square for $a^2b^2 - a^2 - b^2 + 16$ by adding and subtracting the same term.
+
+$a^2b^2 - a^2 - b^2 + 16 = (a^2 - \frac{1}{4})b^2 - (a^2 + b^2) + \frac{65}{4}$
+
+## Step 4: Express $(a^2-\frac{1}{4})b^2 - (a^2 + b^2) + \frac{65}{4}$ as a Perfect Square
+
+We can rewrite $(a^2-\frac{1}{4})b^2 - (a^2 + b^2) + \frac{65}{4}$ as a perfect square.
+
+$(a^2-\frac{1}{4})b^2 - (a^2 + b^2) + \frac{65}{4} = (ab - 1)^2 - (a - \frac{1}{2b})^2 - \frac{9}{4b^2}$
+
+## Step 5: Simplify the Expression for $(ab-1)^2 - (a - \frac{1}{2b})^2 - \frac{9}{4b^2}$
+
+Using the fact that $1 = \frac{(x-20)^2}{b^2-1}$, we can simplify the expression for $(ab-1)^2 - (a - \frac{1}{2b})^2 - \frac{9}{4b^2}$.
+
+$(ab-1)^2 - (a - \frac{1}{2b})^2 - \frac{9}{4b^2} = b^2 - 20b + 1$
+
+## Step 6: Find the Minimum Value of $b^2 + \frac{9}{4b^2}$
+
+Using the fact that $b > 1$, we can find the minimum value of $b^2 + \frac{9}{4b^2}$.
+
+$b^2 + \frac{9}{4b^2} \geq 2\sqrt{b^2 \cdot \frac{9}{4b^2}} = \frac{3}{2}$
+
+## Step 7: Find the Minimum Value of $b^2 - 20b + 1$
+
+Using the fact that $b > 1$, we can find the minimum value of $b^2 - 20b + 1$.
+
+$b^2 - 20b + 1 \geq (b - 10)^2 - 99 \geq -99$
+
+## Step 8: Find the Minimum Value of $a^2 + b^2$
+
+Using the fact that $b^2 \geq \frac{3}{2}$, we can find the minimum value of $a^2 + b^2$.
+
+$a^2 + b^2 \geq a^2 + \frac{3}{2} \geq a^2 + b^2 - 16 + 16 \geq 16 + \frac{3}{2} = \frac{35}{2}$
+
+## Step 9: Find the Minimum Value of $a + b$
+
+Using the fact that $a^2 + b^2 \geq \frac{35}{2}$, we can find the minimum value of $a + b$.
+
+$a + b \geq \sqrt{a^2 + b^2} \geq \sqrt{\frac{35}{2}}$
+
+## Step 10: Evaluate the Expression $\sqrt{\frac{35}{2}}$
+
+Evaluating the expression $\sqrt{\frac{35}{2}}$ gives the final answer.
+
+$\boxed{\sqrt{\frac{35}{2}}}$",-29.2255859375
+There is a polynomial $P(x)$ with integer coefficients such that \[P(x)=\frac{(x^{2310}-1)^6}{(x^{105}-1)(x^{70}-1)(x^{42}-1)(x^{30}-1)}\] holds for every $0<x<1.$ Find the coefficient of $x^{2022}$ in $P(x)$ .,220,"To find the coefficient of $x^{2022}$ in the polynomial $P(x)$, we need to simplify the expression first. We can do this by performing polynomial division. Divide $(x^{2310}-1)^6$ by $(x^{105}-1)(x^{70}-1)(x^{42}-1)(x^{30}-1)$.
+
+After performing polynomial division, we get the quotient $Q(x)$. We can then express the binomial coefficient $\binom{3465}{2022}$ as $\frac{3465 \cdot 3464 \cdots 2023}{2022!}$. By using the formula for the factorial of a number, $n! = n \cdot (n-1) \cdot \cdots \cdot 2 \cdot 1$, we can express $2023!$ as $2023 \cdot 2022!$, allowing us to cancel out the common factors in the numerator and denominator.
+
+After simplifying the expression, we get $\binom{3465}{2022} = \frac{3465 \cdot 3464 \cdot 3463}{2022 \cdot 2021 \cdot 2020}$. By further simplifying the expression, we arrive at $\binom{3465}{2022} = 2310$.
+
+The coefficient of $x^{2022}$ in $P(x)$ is equal to the coefficient of $x^{2022}$ in the quotient $Q(x)$, which is given by the binomial coefficient $\binom{3465}{2022} = 2310$. Therefore, the coefficient of $x^{2022}$ in $P(x)$ is $\boxed{2310}$.",-0.66796875
+"For positive integers $a$ , $b$ , and $c$ with $a < b < c$ , consider collections of postage stamps in denominations $a$ , $b$ , and $c$ cents that contain at least one stamp of each denomination. If there exists such a collection that contains sub-collections worth every whole number of cents up to $1000$ cents, let $f(a, b, c)$ be the minimum number of stamps in such a collection. Find the sum of the three least values of $c$ such that $f(a, b, c) = 97$ for some choice of $a$ and $b$ .",188,"Let $f(a, b, c)$ be the minimum number of stamps in a collection of postage stamps in denominations $a$, $b$, and $c$ cents that contains at least one stamp of each denomination and sub-collections worth every whole number of cents up to $1000$ cents.
+
+First, we show that $a = 3$ by solving the equation $c + c/a + 1 = 97$ for $a$. We can rewrite the equation as $c + \frac{c}{3} + 1 = 97$, which simplifies to $c + \frac{1}{3}c + 1 = 97$. Combining like terms, we get $\frac{4}{3}c + 1 = 97$. Subtracting $1$ from both sides, we have $\frac{4}{3}c = 96$. Multiplying both sides by $\frac{3}{4}$, we get $c = 72$. However, $c$ must be greater than or equal to $6$. When $c = 6$, $a$ can be $3$.
+
+Next, we analyze the case $c = 2a + b$. The number of stamps is given by the formula $c + c/a + 1 = 2a + b + 2 + \frac{b}{a} + 1$. We simplify the equation to get $b + \frac{b}{a} = 94 - 2a$.
+
+We plug in the value $a = 3$, which gives $b + \frac{b}{3} = 94 - 6$. Simplifying the equation, we get $b + \frac{b}{3} = 88$. Combining like terms, we get $\frac{4}{3}b = 88$. Multiplying both sides by $\frac{3}{4}$, we get $b = 66$. When $a = 3$, the smallest possible value of $c$ is $12$, which is given by $c = 2a + b = 2 \cdot 3 + 66 = 75$.
+
+We continue to check for other small values of $a$. Plugging in $a = 4$, we get $b + \frac{b}{4} = 94 - 8$. Simplifying the equation, we get $b + \frac{b}{4} = 86$. Combining like terms, we get $\frac{5}{4}b = 86$. Multiplying both sides by $\frac{4}{5}$, we get $b = 69.6$, which is not an integer. Therefore, $a$ cannot be $4$.
+
+We plug in $a = 5$, which gives $b + \frac{b}{5} = 94 - 10$. Simplifying the equation, we get $b + \frac{b}{5} = 84$. Combining like terms, we get $\frac{6}{5}b = 84$. Multiplying both sides by $\frac{5}{6}$, we get $b = 70$. When $a = 5$, the smallest possible value of $c$ is $14$, which is given by $c = 2a + b = 2 \cdot 5 + 70 = 80$.
+
+We continue to check for other small values of $a$. Plugging in $a = 6$, we get $b + \frac{b}{6} = 94 - 12$. Simplifying the equation, we get $b + \frac{b}{6} = 82$. Combining like terms, we get $\frac{7}{6}b = 82$. Multiplying both sides by $\frac{6}{7}$, we get $b = 72$. When $a = 6$, the smallest possible value of $c$ is $16$, which is given by $c = 2a + b = 2 \cdot 6 + 72 = 84$.
+
+Therefore, the sum of the three least values of $c$ is $12 + 14 + 16 = 42$.",59.134765625
+"Two externally tangent circles $\omega_1$ and $\omega_2$ have centers $O_1$ and $O_2$ , respectively. A third circle $\Omega$ passing through $O_1$ and $O_2$ intersects $\omega_1$ at $B$ and $C$ and $\omega_2$ at $A$ and $D$ , as shown. Suppose that $AB = 2$ , $O_1O_2 = 15$ , $CD = 16$ , and $ABO_1CDO_2$ is a convex hexagon. Find the area of this hexagon. [asy] import geometry; size(10cm); point O1=(0,0),O2=(15,0),B=9*dir(30); circle w1=circle(O1,9),w2=circle(O2,6),o=circle(O1,O2,B); point A=intersectionpoints(o,w2)[1],D=intersectionpoints(o,w2)[0],C=intersectionpoints(o,w1)[0]; filldraw(A--B--O1--C--D--O2--cycle,0.2*red+white,black); draw(w1); draw(w2); draw(O1--O2,dashed); draw(o); dot(O1); dot(O2); dot(A); dot(D); dot(C); dot(B); label(""$\omega_1$"",8*dir(110),SW); label(""$\omega_2$"",5*dir(70)+(15,0),SE); label(""$O_1$"",O1,W); label(""$O_2$"",O2,E); label(""$B$"",B,N+1/2*E); label(""$A$"",A,N+1/2*W); label(""$C$"",C,S+1/4*W); label(""$D$"",D,S+1/4*E); label(""$15$"",midpoint(O1--O2),N); label(""$16$"",midpoint(C--D),N); label(""$2$"",midpoint(A--B),S); label(""$\Omega$"",o.C+(o.r-1)*dir(270)); [/asy]",140,"To find the area of the hexagon $ABO_1CDO_2$, we can find the area of each triangle and add them up.
+
+We can find the area of triangle $O_1BC$ by using the formula for the area of a triangle:
+
+$\Delta = \frac{1}{2}ab\sin C$
+
+where $C$ is the angle between the sides $a$ and $b$.
+
+$\Delta_1 = \frac{1}{2} \cdot 9 \cdot 9 \cdot \sin \angle O_1BC$
+
+The area of triangle $O_2AD$ is:
+
+$\Delta_2 = \frac{1}{2} \cdot 8 \cdot 8 \cdot \sin \angle O_2AD$
+
+The area of triangle $ABO_1$ is:
+
+$\Delta_3 = \frac{1}{2} \cdot 2 \cdot 9 \cdot \sin \angle ABO_1$
+
+The area of triangle $CDO_2$ is:
+
+$\Delta_4 = \frac{1}{2} \cdot 16 \cdot 8 \cdot \sin \angle CDO_2$
+
+We can simplify the expression by using the fact that the sum of the areas of these triangles equals the area of the hexagon.
+
+$A = \Delta_1 + \Delta_2 + \Delta_3 + \Delta_4$
+
+We can simplify this expression by finding a common denominator and combining like terms.
+
+$A = \frac{1}{2} \cdot 9^2 \cdot \sin \angle O_1BC + \frac{1}{2} \cdot 8^2 \cdot \sin \angle O_2AD + \frac{1}{2} \cdot 2 \cdot 9 \cdot \sin \angle ABO_1 + \frac{1}{2} \cdot 16 \cdot 8 \cdot \sin \angle CDO_2$
+
+Notice that $\angle O_1BC$ and $\angle O_2AD$ are complementary to $\angle ABO_1$ and $\angle CDO_2$ respectively.
+
+So, $\sin \angle O_1BC = \cos \angle ABO_1$
+
+and $\sin \angle O_2AD = \cos \angle CDO_2$
+
+Thus, we can simplify the expression:
+
+$A = \frac{1}{2} \cdot 9^2 \cdot \cos \angle ABO_1 + \frac{1}{2} \cdot 8^2 \cdot \cos \angle CDO_2 + \frac{1}{2} \cdot 2 \cdot 9 \cdot \sin \angle ABO_1 + \frac{1}{2} \cdot 16 \cdot 8 \cdot \sin \angle CDO_2$
+
+We can simplify this expression further by using the fact that $\cos \theta = \sin (90^{\circ} - \theta)$.
+
+$A = \frac{1}{2} \cdot 9^2 \cdot \sin (90^{\circ} - \angle ABO_1) + \frac{1}{2} \cdot 8^2 \cdot \sin (90^{\circ} - \angle CDO_2) + \frac{1}{2} \cdot 2 \cdot 9 \cdot \sin \angle ABO_1 + \frac{1}{2} \cdot 16 \cdot 8 \cdot \sin \angle CDO_2$
+
+Since $\angle ABO_1$ and $\angle CDO_2$ are complementary, we have:
+
+$\sin (90^{\circ} - \angle ABO_1) = \sin \angle CDO_2$
+
+and
+
+$\sin (90^{\circ} - \angle CDO_2) = \sin \angle ABO_1$
+
+Thus, we have:
+
+$A = \frac{1}{2} \cdot 9^2 \cdot \sin \angle CDO_2 + \frac{1}{2} \cdot 8^2 \cdot \sin \angle ABO_1 + \frac{1}{2} \cdot 2 \cdot 9 \cdot \sin \angle ABO_1 + \frac{1}{2} \cdot 16 \cdot 8 \cdot \sin \angle CDO_2$
+
+Notice that the first and third terms have a common factor of $\sin \angle CDO_2$, while the second and fourth terms have a common factor of $\sin \angle ABO_1$.
+
+We can factor out these common factors:
+
+$A = \frac{1}{2} \cdot 9^2 \sin \angle CDO_2 (1 + \frac{1}{9}) + \frac{1}{2} \cdot 8^2 \sin \angle ABO_1 (1 + \frac{1}{32})$
+
+Since $1 + \frac{1}{9} = \frac{10}{9}$ and $1 + \frac{1}{32} = \frac{33}{32}$, we have:
+
+$A = \frac{1}{2}",19.462890625

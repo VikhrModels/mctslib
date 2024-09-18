@@ -23,7 +23,7 @@ def load_jsonl(file_path):
 
 
 def load_aime(year: int | None = None) -> pd.DataFrame:
-    df = pd.read_csv("datasets/AIME_Dataset_1983_2024.csv")
+    df = pd.read_csv("../datasets/AIME_Dataset_1983_2024.csv")
     df.rename(columns={"Question": "question", "Answer": "answer"}, inplace=True)
     if year is not None:
         df = df[df["Year"] == year]

@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-FIREWORKS_BASE_URL = "https://api.fireworks.ai/inference/v1"
+TOGETHER_BASE_URL = "https://api.together.xyz/v1"
 OPENAI_BASE_URL = None
 
 
@@ -23,9 +23,13 @@ def get_fireworks_api_key() -> str:
     return os.environ["FIREWORKS_API_KEY"]
 
 
+def get_together_api_key() -> str:
+    return 'f7ef6fdd18cf8b61c4d665da8165e32ef99ca884845f66814280f468a7310c2c'#os.environ["TOGETHER_API_KEY"]
+
+
 def _get_openai_client(base_url: str | None = None) -> openai.Client:
-    if base_url == FIREWORKS_BASE_URL:
-        api_key = get_fireworks_api_key()
+    if base_url == TOGETHER_BASE_URL:
+        api_key = get_together_api_key()
     else:
         api_key = get_openai_api_key()
     return openai.Client(api_key=api_key, base_url=base_url)

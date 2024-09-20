@@ -24,7 +24,7 @@ def get_fireworks_api_key() -> str:
 
 
 def get_together_api_key() -> str:
-    return 'f7ef6fdd18cf8b61c4d665da8165e32ef99ca884845f66814280f468a7310c2c'#os.environ["TOGETHER_API_KEY"]
+    return os.environ["TOGETHER_API_KEY"]
 
 
 def _get_openai_client(base_url: str | None = None) -> openai.Client:

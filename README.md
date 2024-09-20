@@ -38,10 +38,14 @@ Expansion involves several steps:
 
 
 # Results
-I haven't run extensive evals on this.
+| Model          | Arena Hard RU | Arena Hard EN |
+|----------------|---------------|---------------|
+| LLaMA 8B       | 35.07       |  20.6      |
+| LLaMA 8B MCTS  | 45.71      | 321      |
+| Gemma 9B       | Value 5       | Value 6       |
+| Gemma 9B MCTS  | Value 7       | Value 8       |
 
-
-## [AIME 2024](./results/AIME_2024_llama_3_8b.csv)
+# How to use 
 - `max_rollouts=8`
 - `max_children=2`
 

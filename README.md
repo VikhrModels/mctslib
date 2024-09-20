@@ -45,7 +45,58 @@ Expansion involves several steps:
 | Gemma 9B       | Value 5       | Value 6       |
 | Gemma 9B MCTS  | Value 7       | Value 8       |
 
+
 # How to use 
+
+1. **Clone the repository** (assuming the repository URL is provided):
+   ```bash
+   git clone <repository_url>
+   cd <repository_directory>
+   ```
+
+2. **Install dependencies** (from a `requirements.txt` file):
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+```bash
+git clone https://github.com/VikhrModels/mctslib.git
+cd mctslib
+pip install -r requirements.txt
+```
+
+
+```python
+import os
+from src.mcts_llm.mctsr import MCTSrLlama38B
+from src.dataset_utils import load_aime
+from tqdm import tqdm
+import pandas as pd
+from src.mcts_llm.mctsr import print_tree
+
+# Set your API key
+os.environ['TOGETHER_API_KEY'] = '<your key>'
+
+# Define the problem/question
+q = """Your Task"""
+
+# Initialize the MCTS model with the given parameters
+mctsr = MCTSrLlama38B(
+    problem=q,
+    max_rollouts=4,
+    max_children=8,
+    selection_policy=2,
+    initialize_strategy=2
+)
+
+# Run the MCTS model
+best_answer = mctsr.run()
+
+# Print the best answer found
+print(best_answer)
+```
+
+
 - `max_rollouts=8`
 - `max_children=2`
 

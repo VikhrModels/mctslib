@@ -22,15 +22,15 @@ from pydantic import BaseModel
 import tqdm
 from .prompt_configs import (
     llama_3_8b_prompt_config,
+    # gemma_prompt_config,
     gpt_4o_prompt_config,
     RefineResponse,
 )
-# llama_3_8b_prompt_config = llama_3_70b_prompt_config
+# llama_3_8b_prompt_config = gemma_prompt_config
 import numpy as np
 from tiktoken import get_encoding
 
 enc = get_encoding('o200k_base')
-
 ROOT_UCT_SCORE = 10_000
 
 

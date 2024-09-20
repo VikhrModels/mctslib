@@ -44,7 +44,7 @@ import concurrent.futures
 def run_mcts_on_custom_dataset(file_path):
     # Load the custom dataset
     with open(file_path, 'r') as f:
-        custom_data = [json.loads(fl) for fl in f][250:]
+        custom_data = [json.loads(fl) for fl in f]
 
     results = []
 
@@ -61,7 +61,6 @@ def run_mcts_on_custom_dataset(file_path):
         best_answer = mctsr.run()
 
         return {
-
             'question_id': item['question_id'],
             'cluster': item['cluster'],
             'category': item['category'],
@@ -71,12 +70,19 @@ def run_mcts_on_custom_dataset(file_path):
         }
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
-        results = list(tqdm(executor.map(process_item, custom_data), total=len(custom_data)))
+        for i, result in enumerate(tqdm(executor.map(process_item, custom_data), total=len(custom_data))):
+            results.append(result)
 
+            # Save intermediate results every 50 items
+            if (i + 1) % 50 == 0:
+                df = pd.DataFrame(results)
+                df.to_csv(f'results/custom_dataset_results_500_or_arena_intermediate_{i+1}.csv', index=False)
+
+    # Save final results
     df = pd.DataFrame(results)
-    df.to_csv('results/custom_dataset_results_500.csv', index=False)
+    df.to_csv('results/custom_dataset_results_500_or_arena.csv', index=False)
 
 
 if __name__ == "__main__":
     # run_mcts_on_aime()
-    run_mcts_on_custom_dataset('/root/kostya/mcts/mcts-llm/datasets/question-4.jsonl')
+    run_mcts_on_custom_dataset('/root/kostya/mcts/mcts-llm/datasets/question_en.jsonl')

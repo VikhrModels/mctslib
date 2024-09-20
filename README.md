@@ -46,7 +46,7 @@ Expansion involves several steps:
 | Gemma 9B MCTS  | Value 7       | Value 8       |
 
 
-# how to use our repo
+# How to use 
 
 1. **Clone the repository** (assuming the repository URL is provided):
    ```bash
@@ -60,8 +60,8 @@ Expansion involves several steps:
    ```
 
 ```bash
-git clone <repository_url>
-cd <repository_directory>
+git clone https://github.com/VikhrModels/mctslib.git
+cd mctslib
 pip install -r requirements.txt
 ```
 
@@ -96,7 +96,7 @@ best_answer = mctsr.run()
 print(best_answer)
 ```
 
-# How to use 
+
 - `max_rollouts=8`
 - `max_children=2`
 

@@ -50,8 +50,8 @@ Expansion involves several steps:
 
 1. **Clone the repository** (assuming the repository URL is provided):
    ```bash
-   git clone <repository_url>
-   cd <repository_directory>
+   git clone https://github.com/VikhrModels/mctslib.git
+cd mctslib
    ```
 
 2. **Install dependencies** (from a `requirements.txt` file):
@@ -59,11 +59,6 @@ Expansion involves several steps:
    pip install -r requirements.txt
    ```
 
-```bash
-git clone https://github.com/VikhrModels/mctslib.git
-cd mctslib
-pip install -r requirements.txt
-```
 
 
 ```python

@@ -47,17 +47,16 @@ Expansion involves several steps:
 
 
 # How to use 
-
 1. **Clone the repository** (assuming the repository URL is provided):
-   ```bash
+```bash
    git clone https://github.com/VikhrModels/mctslib.git
-cd mctslib
-   ```
+   cd mctslib
+ ```
 
 2. **Install dependencies** (from a `requirements.txt` file):
-   ```bash
+```bash
    pip install -r requirements.txt
-   ```
+```
 
 
 

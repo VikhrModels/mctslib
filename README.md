@@ -42,8 +42,7 @@ Expansion involves several steps:
 |----------------|---------------|---------------|
 | LLaMA 8B       | 35.07       |  20.6      |
 | LLaMA 8B MCTS  | 45.71      | 32.1      |
-| Gemma 9B       | Value 5       | Value 6       |
-| Gemma 9B MCTS  | Value 7       | Value 8       |
+
 
 
 # How to use 
